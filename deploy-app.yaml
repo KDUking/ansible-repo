@@ -1,0 +1,6 @@
+- name: Synchronize war files to remote instance
+  synchronize:
+    src: /var/lib/jenkins/workspace/nunu/build/libs/nunu.war
+    dest: /usr/local/tomcat9/webapps/nunu.war
+  delegate_to: "{{ target_host }}"
+
