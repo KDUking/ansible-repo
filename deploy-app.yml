@@ -12,8 +12,8 @@
         mode: push
  
     - name: Tomcat 재시작
-    shell: |
-      /usr/local/tomcat9/bin/shutdown.sh
-      sleep 3
-      nohup /usr/local/tomcat9/bin/startup.sh &
-    become: yes
+      shell: |
+        /usr/local/tomcat9/bin/shutdown.sh
+        sleep 3
+        nohup /usr/local/tomcat9/bin/startup.sh &
+      become: yes
