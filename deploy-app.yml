@@ -11,10 +11,9 @@
         dest: /usr/local/tomcat9/webapps/nunu.war
         mode: push
  
-    - name: Shutdown the service
-      command: /usr/local/tomcat9/bin/shutdown.sh
-      become: yes   # 관리자 권한이 필요한 경우 사용
-     
-    - name: Start the service
-      command: /usr/local/tomcat9/bin/startup.sh
-      become: yes
+    - name: Tomcat 재시작
+    shell: |
+      /usr/local/tomcat9/bin/shutdown.sh
+      sleep 3
+      nohup /usr/local/tomcat9/bin/startup.sh &
+    become: yes
