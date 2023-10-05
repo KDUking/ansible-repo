@@ -14,12 +14,7 @@
     - name: Shutdown the service
       command: /usr/local/tomcat9/bin/shutdown.sh
       become: yes   # 관리자 권한이 필요한 경우 사용
-
-
-    - name: Wait for a few seconds
-      pause:
-        seconds: 2   # 필요에 따라 대기 시간을 조정
-        
+     
     - name: Start the service
       command: /usr/local/tomcat9/bin/startup.sh
       become: yes   # 관리자 권한이 필요한 경우 사용
