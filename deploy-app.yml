@@ -5,6 +5,7 @@
     ansible_ssh_private_key_file: "{{ lookup('env', 'pem_key_path') }}"
   tasks:
     - name: Synchronize war file to the target
+      become: yes
       synchronize:
         src: /var/lib/jenkins/workspace/nunu/build/libs/nunu.war
         dest: /usr/local/tomcat9/webapps/nunu.war
