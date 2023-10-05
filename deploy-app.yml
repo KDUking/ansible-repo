@@ -12,7 +12,7 @@
         mode: push
  
     - name: Shutdown the service
-      shell: /usr/local/tomcat9/bin/shutdown.sh
+      command: /usr/local/tomcat9/bin/shutdown.sh
       become: yes   # 관리자 권한이 필요한 경우 사용
      
     - name: Start the service
