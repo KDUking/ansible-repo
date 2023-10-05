@@ -13,7 +13,7 @@
  
     - name: Shutdown the service
       command: /usr/local/tomcat9/bin/shutdown.sh
-      become_user: tomcat9
+      become_user: ec2-user
       become: yes   # 관리자 권한이 필요한 경우 사용
 
 
@@ -24,4 +24,4 @@
     - name: Start the service
       command: /usr/local/tomcat9/bin/startup.sh
       become: yes   # 관리자 권한이 필요한 경우 사용
-      become_user: tomcat9
+      become_user: ec2-user
