@@ -15,5 +15,5 @@
       shell: |
         /usr/local/tomcat9/bin/shutdown.sh
         sleep 3
-        /usr/local/tomcat9/bin/startup.sh &
+        nohup /usr/local/tomcat9/bin/startup.sh &
       become: yes
