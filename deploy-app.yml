@@ -13,6 +13,7 @@
  
     - name: Shutdown the service
       command: /usr/local/tomcat9/bin/shutdown.sh
+      become_user: tomcat
       become: yes   # 관리자 권한이 필요한 경우 사용
 
 
@@ -21,7 +22,6 @@
         seconds: 2   # 필요에 따라 대기 시간을 조정
         
     - name: Start the service
-      command: bin/startup.sh
+      command: /usr/local/tomcat9/bin/startup.sh
       become: yes   # 관리자 권한이 필요한 경우 사용
-      args:
-        chdir: /usr/local/tomcat9/   # 해당 디렉토리로 이동하여 명령을 실행하려면 사용
+      become_user: tomcat
