@@ -11,7 +11,7 @@
         dest: /usr/local/tomcat9/webapps/nunu.war
         mode: push
  
-    - name: Tomcat 재시작
+    - name: Restart Tomcat Service
       shell: |
         /usr/local/tomcat9/bin/shutdown.sh
         sleep 3
